@@ -2,3 +2,7 @@
 
 - Programmers
 - Baekjoon
+
+## SKills
+- Python
+- Java
