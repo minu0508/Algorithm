@@ -7,12 +7,10 @@ def solution(s):
         save = ""
         for j in saveList:
             save += j
-        for _ in range(3):
+        for _ in range(len(s) // 2 + 1):
             save = save.replace("[]", "")
             save = save.replace("()", "")
             save = save.replace("{}", "")
         if (len(save) == 0):
             answer += 1
     return answer
-
-solution("}]()[{")
