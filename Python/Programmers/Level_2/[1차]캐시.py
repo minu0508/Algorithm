@@ -1,36 +1,26 @@
-# def solution(phone_book):
-#     answer = True
+from collections import deque
 
-#     for i in phone_book:
-#         for j in range(0, len(phone_book), 1):
-#             if (i == phone_book[j]):
-#                 pass
-#             else:
-#                 if (len(i) < len(phone_book[j])):
-#                     if (phone_book[j][:len(i)] == i):
-#                         answer = False
-#                         break
+def solution(cacheSize, cities):
+    answer = 0
+    cacheList = deque([])
 
-#                 else:
-#                     if (i[:len(phone_book[j])] == phone_book[j]):
-#                         answer = False
-#                         break
-#     return answer
+    if (cacheSize == 0):
+        answer = len(cities) * 5
 
-# Hash를 이용한 것이 아니며, 효율성 0점
-
-def solution(phone_book):
-    answer = True
-    hash = {}
-
-    for i in phone_book:
-        hash[i] = 1
-
-    for i in phone_book:
-        temp = ''
-        for j in i:
-            temp += j
-            if temp in hash and temp != i:
-                answer = False
-    
+    else:
+        for i in cities:
+            i = i.lower()
+            if (cacheList.count(i) != 1):
+                cacheList.append(i)
+                answer += 5
+                if (len(cacheList) > cacheSize):
+                    cacheList.popleft()
+            else:
+                cacheList.remove(i)
+                cacheList.append(i)
+                answer += 1
+    print(answer)
     return answer
+
+# solution(3, ["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"])
+solution(3, ["Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul"])
