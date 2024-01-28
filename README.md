@@ -7,3 +7,4 @@
 ## SKills
 - Python
 - Java
+- JavaScript
