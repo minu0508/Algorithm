@@ -25,5 +25,4 @@ def solution(friends, gifts):
                         answer[friends.index(friends[k])] += 1
                     else:
                         pass
-    answer = max(answer)
-    return answer
+    return max(answer)
