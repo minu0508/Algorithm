@@ -2,7 +2,6 @@ def solution(friends, gifts):
     answer = [0] * len(friends)
     givaAndTake = {i: [0] * len(friends) for i in friends}
     futuresIndex = {i: 0 for i in friends}
-    maxGift = [0] * len(friends)
     
     for i in gifts:
         i = i.split(" ")
