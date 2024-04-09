@@ -12,3 +12,10 @@ def solution(common):
     else:
         answer = common[len(common)-1] * (common[len(common)-1] // common[len(common)-2])
     return answer
+
+# 24-04-09
+def solution(common):
+    if (common[2] - common[1] == common[1] - common[0]):
+        return common[-1] + (common[2] - common[1])
+    else:
+        return common[-1] * ((common[2] - common[1]) // (common[1] - common[0]))
