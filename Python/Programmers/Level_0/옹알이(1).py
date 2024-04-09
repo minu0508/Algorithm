@@ -21,3 +21,14 @@ def solution(babbling):
                 answer += 1
 
     return answer
+
+# 24-04-09
+def solution(babbling):
+    answer = 0
+    
+    for i in babbling:
+        i = i.replace("aya", "!").replace("ye", "@").replace("woo", "#").replace("ma", "$")
+        
+        if (i.count("!") + i.count("@") + i.count("#") + i.count("$") == len(i)):
+            answer += 1
+    return answer
