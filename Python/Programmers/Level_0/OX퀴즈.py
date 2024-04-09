@@ -22,7 +22,7 @@ def solution(quiz):
 
     return answer
 
-# 24-04-09
+# 24-04-09(1)
 def solution(quiz):
     answer = []
     for i in quiz:
@@ -37,4 +37,16 @@ def solution(quiz):
                 answer.append("O")
             else:
                 answer.append("X")
+    return answer
+
+# 24-04-09(2)
+def solution(quiz):
+    answer = []
+    for i in quiz:
+        linearExpression, result = i.split("=")
+        linearExpressionResult = eval(linearExpression)
+        if (linearExpressionResult == int(result)):
+            answer.append("O")
+        else:
+            answer.append("X")
     return answer
