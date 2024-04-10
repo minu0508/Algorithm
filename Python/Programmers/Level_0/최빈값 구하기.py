@@ -17,3 +17,18 @@ def solution(array):
             answer = array_set[count_list.index(Max_number)]
 
     return answer
+
+# 24-04-10
+def solution(array):
+    numDict = {str(i) : 0 for i in array}
+    
+    for i in array:
+        numDict[str(i)] += 1
+    valuesList = list(numDict.values())
+    
+    if (valuesList.count(max(valuesList)) > 1):
+        return -1
+    else:
+        for i in numDict:
+            if (numDict[i] == max(valuesList)):
+                return i
